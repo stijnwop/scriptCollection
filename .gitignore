@@ -1,0 +1,5 @@
+# User-specific stuff
+.idea
+
+# MAC
+.DS_Store
