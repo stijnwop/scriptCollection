@@ -5,15 +5,15 @@
 
     <title>
         <en>Cultivator Field Creator</en>
-        <de>Cultivator Field Creator</de>
+        <de>Kultivator Felderstellung</de>
     </title>
 
     <description>
         <en>
-            <![CDATA[CultivatorFieldCreator.]]>
+            <![CDATA[This mod allows you to toggle field creation for all cultivators.]]>
         </en>
         <de>
-            <![CDATA[CultivatorFieldCreator.]]>
+            <![CDATA[Dieser Mod schaltet die Felderstellung für Grubber, Scheibeneggen sowie Tiefenlockerern frei.]]>
         </de>
     </description>
 
