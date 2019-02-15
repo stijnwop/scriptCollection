@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="41">
+    <author>Wopster</author>
+    <version>1.0.0.0</version>
+
+    <title>
+        <en>PlayerActionCamera</en>
+        <de>PlayerActionCamera</de>
+    </title>
+
+    <description>
+        <en>
+            <![CDATA[This mod allows you to move and modify the Field Of View of the player camera by mouse.
+Use the middle mouse button to control the player height.
+Use the middle mouse button while holding the right mouse button to control the FOV.
+In order to reset press the middle mouse button once.]]>
+        </en>
+        <de>
+            <![CDATA[Dieser Mod ermöglicht es das Sichtfeld per Maus zu bewegen und anzupassen.
+Das Mausrad beeinflusst die Spielerhöhe.
+Das FOV(Field of View) lässt sich mithilfe des Mausrades bei gedrückter rechter Maustaste verstellen.
+Das Drücken des Mausrades setzt die Einstellung zurück.]]>
+        </de>
+    </description>
+
+    <iconFilename>icon.png</iconFilename>
+    <multiplayer supported="true"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="src/PlayerActionCamera.lua"/>
+    </extraSourceFiles>
+</modDesc>
