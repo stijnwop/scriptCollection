@@ -7,10 +7,6 @@
 
 CultivatorFieldCreator = {}
 
-local function getSpecName()
-    return "spec_FS19_createFieldsWithCultivator.cultivatorFieldCreator"
-end
-
 function CultivatorFieldCreator.prerequisitesPresent(specializations)
     return SpecializationUtil.hasSpecialization(Cultivator, specializations)
 end
@@ -27,7 +23,7 @@ end
 
 function CultivatorFieldCreator:onRegisterActionEvents(isActiveForInput, isActiveForInputIgnoreSelection)
     if self.isClient then
-        local spec = self[getSpecName()]
+        local spec = CFCUtil.getSpecTable(self)
         self:clearActionEventsTable(spec.actionEvents)
         if isActiveForInputIgnoreSelection then
             local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.IMPLEMENT_EXTRA3, self, CultivatorFieldCreator.actionEventLimitToField, false, true, false, true, nil)
@@ -47,7 +43,7 @@ end
 ---onUpdate
 function CultivatorFieldCreator:onUpdate()
     if self.isClient then
-        local spec = self[getSpecName()]
+        local spec = CFCUtil.getSpecTable(self)
         local actionEvent = spec.actionEvents[InputAction.IMPLEMENT_EXTRA3]
         if actionEvent ~= nil then
             local spec_cultivator = self.spec_cultivator
@@ -84,7 +80,7 @@ function CultivatorFieldCreator:setLimitToField(limitToField, noEventSend)
 
         spec_cultivator.limitToField = limitToField
 
-        local spec = self[getSpecName()]
+        local spec = CFCUtil.getSpecTable(self)
         local actionEvent = spec.actionEvents[InputAction.IMPLEMENT_EXTRA3]
         if actionEvent ~= nil then
             local text = "action_limitToFields"

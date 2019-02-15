@@ -25,3 +25,9 @@ function initSpecialization()
 end
 
 init()
+
+CFCUtil = {}
+
+function CFCUtil.getSpecTable(self)
+	return self["spec_" .. modName .. ".cultivatorFieldCreator"]
+end
