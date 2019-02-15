@@ -17,6 +17,7 @@ end
 
 function CultivatorFieldCreator.registerEventListeners(vehicleType)
     SpecializationUtil.registerEventListener(vehicleType, "onPostLoad", CultivatorFieldCreator)
+    SpecializationUtil.registerEventListener(vehicleType, "onPostAttach", CultivatorFieldCreator)
     SpecializationUtil.registerEventListener(vehicleType, "onUpdate", CultivatorFieldCreator)
     SpecializationUtil.registerEventListener(vehicleType, "onRegisterActionEvents", CultivatorFieldCreator)
 end
@@ -38,6 +39,18 @@ function CultivatorFieldCreator:onPostLoad(savegame)
     local spec = self.spec_cultivator
     spec.limitToField = true
     spec.forceLimitToField = false
+end
+
+---Triggered after the implement is attached
+---@param attacherVehicle table
+---@param inputJointDescIndex number
+---@param jointDescIndex number
+function CultivatorFieldCreator:onPostAttach(attacherVehicle, inputJointDescIndex, jointDescIndex)
+	-- Reset spec
+	local spec = self.spec_cultivator
+    if not spec.limitToField then
+        self:setLimitToField(not spec.limitToField)
+    end
 end
 
 ---onUpdate
